@@ -1,13 +1,14 @@
 import React, { useCallback } from 'react';
 
 import useGlobalState from '../useGlobalState';
+import { buildActiveGroup } from '../utils';
 
 // Components
 import DistributeCurrentAction from './DistributeCurrentAction';
 import DistributeProgressBar from './DistributeProgressBar';
 import DistributeBoxes from './DistributeBoxes';
 import DistributeLog from './DistributeLog';
-import { buildActiveGroup } from '../utils';
+import Icon from './Icon';
 
 function Distribute() {
   // Global States
@@ -26,9 +27,11 @@ function Distribute() {
       <h1>Distribute - {activeGroup.name}</h1>
       <nav className="distribute-nav">
         <button className="distribute-nav__button" onClick={handleReset}>
-          Reset
+          <Icon type="refresh" inline /> Reset
         </button>
-        <button className="distribute-nav__button">Results</button>
+        <button className="distribute-nav__button">
+          <Icon type="pie-chart" inline /> Results
+        </button>
       </nav>
       <DistributeCurrentAction />
       <DistributeProgressBar />

@@ -114,13 +114,13 @@
 
 .pill {
   padding: $unit;
-  border-radius: $unit3;
+  border-radius: $unit4;
   margin: 0 $unit $unit;
 
   &__label {
     font-size: 80%;
     text-transform: uppercase;
-    margin: $unit;
+    margin: 0 $unit;
   }
 
   &__timestamp {
@@ -129,8 +129,16 @@
   }
 
   &__icon-button {
+    width: 16px;
+    height: 16px;
     background: white;
     border: none;
-    border-radius: 50%;
+    border-radius: $unit4;
+    margin: 0 $unit;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 }

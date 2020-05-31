@@ -3,6 +3,7 @@ import logo from '../images/ld-express-logo.svg';
 
 import useGlobalState from '../useGlobalState';
 import { SCREENS } from '../utils/constants';
+import Icon from './Icon';
 
 function Header() {
   const [screen, setScreen] = useGlobalState('screen');
@@ -22,10 +23,11 @@ function Header() {
   return (
     <header className="header">
       <button className="header__btn" onClick={goToPresets}>
-        Presets
+        <Icon type="list" inline inverted /> Presets
       </button>
       <img src={logo} className="header__logo" alt="logo" />
       <button className="header__btn" onClick={goToCreate}>
+        <Icon type="pencil-boxed" inline inverted />
         Create
       </button>
     </header>
