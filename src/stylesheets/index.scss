@@ -1,79 +1,10 @@
-$color-negative: #fdfffc;
-$color-react: #282c34;
-$unit: 3px;
-$unit2: $unit * 2;
-$unit3: $unit * 3;
-$unit4: $unit * 4;
-$unit5: $unit * 5;
+@import 'functions';
+@import 'constants';
 
-body {
-  background: $color-negative;
-  color: $color-react;
-  font-family: 'Noto Sans', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+@import 'app';
 
-.container {
-  width: 100vw;
-  height: 100vw;
-}
-
-.header {
-  background: $color-react;
-  color: $color-negative;
-
-  padding: $unit2;
-
-  display: flex;
-  justify-content: space-between;
-
-  &__logo {
-    max-height: 30px;
-  }
-
-  &__btn {
-    background: none;
-    border: none;
-    color: $color-negative;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-
-    &:hover {
-      border-bottom: 2px solid $color-negative;
-    }
-  }
-}
-
-.content {
-  padding: $unit2;
-}
-
-.color-palette {
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-$palette-size: 100px;
-
-.color {
-  width: $palette-size;
-  max-width: $palette-size;
-  height: $palette-size / 2;
-  max-height: $palette-size / 2;
-  padding: $unit2;
-  border-radius: $unit;
-  margin: $unit;
-  display: flex;
-
-  &__name {
-    // text-transform: uppercase;
-    font-size: 70%;
-  }
-}
+@import 'header';
+@import 'home';
+@import 'presets';
+@import 'create';
+@import 'distribute';

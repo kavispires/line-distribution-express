@@ -8,7 +8,14 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 6px;
+  flex: 1;
 }
 
 .header {
@@ -35,8 +42,17 @@ body {
   border-bottom: 2px solid #fdfffc;
 }
 
-.content {
-  padding: 6px;
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home__logo {
+  max-width: 450px;
+}
+.home p {
+  margin-top: 48px;
 }
 
 .color-palette {

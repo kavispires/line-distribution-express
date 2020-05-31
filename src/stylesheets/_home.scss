@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    max-width: 450px;
+  }
+
+  p {
+    margin-top: $unit5;
+  }
+}

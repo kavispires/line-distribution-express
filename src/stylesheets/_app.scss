@@ -1,0 +1,19 @@
+body {
+  background: $color-negative;
+  color: $color-react;
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: $unit2;
+  flex: 1;
+}

@@ -1,0 +1,28 @@
+.header {
+  background: $color-react;
+  color: $color-negative;
+
+  padding: $unit2;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    max-height: 30px;
+  }
+
+  &__btn {
+    background: none;
+    border: none;
+    color: $color-negative;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 2px solid $color-negative;
+    }
+  }
+}

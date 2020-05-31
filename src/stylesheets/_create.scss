@@ -1,0 +1,25 @@
+.color-palette {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$palette-size: 100px;
+
+.color {
+  width: $palette-size;
+  max-width: $palette-size;
+  height: $palette-size / 2;
+  max-height: $palette-size / 2;
+  padding: $unit2;
+  border-radius: $unit;
+  margin: $unit;
+  display: flex;
+
+  &__name {
+    // text-transform: uppercase;
+    font-size: 70%;
+  }
+}
