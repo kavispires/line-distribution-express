@@ -79,3 +79,8 @@ export const buildActiveGroup = (groupId) => {
     boxSize: getBoxSize(groupSize),
   };
 };
+
+export const extractMemberIdFromBox = (boxId) => {
+  const prefix = 'box-id-';
+  return boxId.substring(prefix.length);
+};
