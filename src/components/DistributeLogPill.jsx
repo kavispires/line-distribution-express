@@ -10,7 +10,7 @@ import Icon from './Icon';
 
 function DistributeLogPill({ pill }) {
   // Global States
-  const [activeGroup] = useGlobalState('activeGroup');
+  const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
   const [log, setLog] = useGlobalState('log');
 
   const handleEditPill = useCallback(() => {
@@ -26,10 +26,13 @@ function DistributeLogPill({ pill }) {
   );
 
   const handleDeletePill = useCallback(() => {
-    // Remove duration from
+    // Remove duration from member
+    setActiveGroup((previousState) =>
+      previousState.subtractMemberDuration(pill.memberId, pill.duration)
+    );
 
     setLog((ps) => _.remove([...ps], (n) => n.id !== pill.id));
-  }, [setLog, pill.id]);
+  }, [setLog, pill, setActiveGroup]);
 
   const member = activeGroup.members[pill.memberId];
 
