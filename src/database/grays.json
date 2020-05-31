@@ -1,0 +1,14 @@
+{
+  "4": {
+    "name": "spanish-gray",
+    "hsb": [4, 9, 64],
+    "hex": "#A39594",
+    "group": "white"
+  },
+  "32": {
+    "name": "dim-gray",
+    "hsb": [32, 14, 43],
+    "hex": "#6E675F",
+    "group": "white"
+  }
+}

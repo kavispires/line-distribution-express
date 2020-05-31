@@ -1,0 +1,30 @@
+{
+  "a001": {
+    "name": "Squirrel Zone",
+    "members": [
+      "m001",
+      "m002",
+      "m003",
+      "m004",
+      "m005",
+      "m006",
+      "m007",
+      "m008",
+      "m009",
+      "m010",
+      "m011"
+    ]
+  },
+  "b002": {
+    "name": "Squirrel Zone I",
+    "members": ["m001", "m002", "m003", "m004", "m005"]
+  },
+  "a003": {
+    "name": "Squirrel Zone 1.5",
+    "members": ["m001", "m002", "m003", "m004", "m005", "m006"]
+  },
+  "a004": {
+    "name": "Squirrel Zone II",
+    "members": ["m007", "m008", "m009", "m010", "m011"]
+  }
+}
