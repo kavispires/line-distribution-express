@@ -38,13 +38,6 @@ export const buildPresets = () => {
   return _.sortBy(presetList, [(o) => o.name]);
 };
 
-export const buildKeyMemberDict = (activeGroup) => {
-  return Object.values(activeGroup.members).reduce((acc, member) => {
-    acc[member.key] = member.id;
-    return acc;
-  }, {});
-};
-
 export const buildActiveGroup = (groupId) => {
   const group = groupsJson[groupId];
 
@@ -68,14 +61,3 @@ export const generatePillId = (() => {
     return `p${lastNum}`;
   };
 })();
-
-export const updateMemberDuration = (group, memberId, value) => ({
-  ...group,
-  members: {
-    ...group.members,
-    [memberId]: {
-      ...group.members[memberId],
-      duration: group.members[memberId].duration + value,
-    },
-  },
-});
