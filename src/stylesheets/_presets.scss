@@ -1,0 +1,19 @@
+.presets-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.preset-item {
+  width: 24%;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.preset-button {
+  padding: $unit2;
+  width: 100%;
+  background: $color-negative;
+  border-radius: $unit;
+  border: 1px outset rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+}

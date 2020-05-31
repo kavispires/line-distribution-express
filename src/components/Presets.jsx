@@ -1,12 +1,50 @@
 import React from 'react';
-import CreateColorPalette from './CreateColorPalette';
+
+import useGlobalState from '../useGlobalState';
+import { SCREENS } from '../utils/constants';
 
 function Presets() {
+  // Global States
+  const [, setScreen] = useGlobalState('screen');
+  const [, setActiveGroup] = useGlobalState('activeGroup');
+  const [presets] = useGlobalState('presets');
+  const [customPresets] = useGlobalState('customPresets');
+
+  const activatePreset = (preset) => {
+    setActiveGroup(preset);
+    setScreen(SCREENS.DISTRIBUTE);
+  };
+
   return (
     <main className="content preset">
-      <h2>Preset</h2>
-      <p>Content comes here</p>
-      <CreateColorPalette />
+      <h2>Presets</h2>
+      <p>Select the group preset you want to use:</p>
+      <ul className="presets-list">
+        {presets.map((preset) => {
+          return (
+            <li key={preset.id} className="preset-item">
+              <button className="preset-button" onClick={() => activatePreset(preset)}>
+                {preset.name} ({preset.groupSize} members)
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <h3>Custom Presets</h3>
+
+      {customPresets.length > 0 ? (
+        <ul className="presets-list">
+          {presets.map((preset) => {
+            return (
+              <li key={preset.id} className="ha">
+                {preset.name} ({preset.groupSize})
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <p>You have no custom presets saved on this browser.</p>
+      )}
     </main>
   );
 }

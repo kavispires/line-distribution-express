@@ -1,12 +1,20 @@
 import { createGlobalState } from 'react-hooks-global-state';
 import _ from 'lodash';
 
-import COLORS from './database/colors.json';
+// Database files
+import colorsJson from './database/colors.json';
+import groupsJson from './database/groups.json';
+import membersJson from './database/members.json';
+
+import { buildPresets } from './utils';
 import { SCREENS } from './utils/constants';
 
 const initialState = {
   screen: SCREENS.HOME,
-  palette: _.sortBy(COLORS, [(o) => o.hsb[0], (o) => o.hsb[1]]),
+  palette: _.sortBy(colorsJson, [(o) => o.hsb[0], (o) => o.hsb[1]]),
+  presets: buildPresets(groupsJson, membersJson),
+  customPresets: [],
+  activeGroup: null,
 };
 
 const { useGlobalState } = createGlobalState(initialState);

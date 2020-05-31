@@ -14,7 +14,7 @@ body {
 }
 
 .content {
-  padding: 6px;
+  padding: 6px 24px;
   flex: 1;
 }
 
@@ -53,6 +53,27 @@ body {
 }
 .home p {
   margin-top: 48px;
+}
+
+.presets-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.preset-item {
+  width: 24%;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.preset-button {
+  padding: 6px;
+  width: 100%;
+  background: #fdfffc;
+  border-radius: 3px;
+  border: 1px outset #d8d8d8 #d1d1d1 #bababa;
 }
 
 .color-palette {
