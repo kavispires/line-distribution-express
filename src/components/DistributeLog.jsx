@@ -4,13 +4,11 @@ import useGlobalState from '../useGlobalState';
 
 // Components
 import DistributeLogPill from './DistributeLogPill';
-import { updateMemberDuration } from '../utils';
 
 function DistributeLog() {
   // Global States
   const [, setActiveGroup] = useGlobalState('activeGroup');
   const [log] = useGlobalState('log');
-  const [, setDistributionTotal] = useGlobalState('distributionTotal');
 
   // Calculate members durations whenever log changes
   useEffect(() => {
@@ -19,12 +17,9 @@ function DistributeLog() {
     const { duration = 0, memberId } = latestPill;
 
     if (memberId) {
-      setActiveGroup((activeG) => updateMemberDuration(activeG, memberId, duration));
-
-      // Add to total
-      setDistributionTotal((s) => s + duration);
+      setActiveGroup((previousState) => previousState.addMemberDuration(memberId, duration));
     }
-  }, [log, setActiveGroup, setDistributionTotal]);
+  }, [log, setActiveGroup]);
 
   return (
     <ul className="log">

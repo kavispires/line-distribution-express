@@ -13,10 +13,8 @@ const initialState = {
   presets: buildPresets(),
   customPresets: [],
   activeGroup: null,
-  keyMemberDict: {},
   activeBoxes: {},
   log: [],
-  distributionTotal: 0,
 };
 
 const { useGlobalState } = createGlobalState(initialState);

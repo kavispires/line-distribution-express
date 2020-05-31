@@ -8,7 +8,6 @@ function DistributeBoxes() {
   // Global States
   const [activeGroup] = useGlobalState('activeGroup');
   const [activeBoxes, setActiveBoxes] = useGlobalState('activeBoxes');
-  const [keyMemberDict] = useGlobalState('keyMemberDict');
   const [, setLog] = useGlobalState('log');
   // Local States
   const [activeKeys, setActiveKeys] = useState({});
@@ -53,19 +52,19 @@ function DistributeBoxes() {
   // Add KeyPress functionality
   const handleKeyDown = useCallback(
     ({ key }) => {
-      const memberId = keyMemberDict[key];
+      const memberId = activeGroup.getMemberIdByKey(key);
 
       if (memberId && activeKeys[key] === undefined) {
         setActiveKeys((s) => ({ ...s, [key]: true }));
         activateBox(memberId);
       }
     },
-    [activeKeys, keyMemberDict, activateBox]
+    [activeKeys, activeGroup, activateBox]
   );
 
   const handleKeyUp = useCallback(
     ({ key }) => {
-      const memberId = keyMemberDict[key];
+      const memberId = activeGroup.getMemberIdByKey(key);
 
       if (memberId && activeKeys[key]) {
         setActiveKeys((s) => {
@@ -76,7 +75,7 @@ function DistributeBoxes() {
         deactivateBox(memberId);
       }
     },
-    [activeKeys, setActiveKeys, keyMemberDict, deactivateBox]
+    [activeKeys, setActiveKeys, activeGroup, deactivateBox]
   );
 
   // Add Event Listeners on mount
@@ -105,7 +104,7 @@ function DistributeBoxes() {
           >
             <span className="box__key">{member.key}</span>
             <span className="box__name">{member.name}</span>
-            <span className="box__duration">{Number(member.duration / 1000).toFixed(1)}s</span>
+            <span className="box__duration">{member.durationInSeconds}s</span>
           </li>
         );
       })}

@@ -5,8 +5,8 @@ import colorsJson from '../database/colors.json';
 import groupsJson from '../database/groups.json';
 import membersJson from '../database/members.json';
 
-// Constants
-import { KEYS } from './constants';
+// Classes
+import { Group } from './classes';
 
 export const getBackgroundColor = (hex = '#b5b59e', luminance = 100) => {
   return {
@@ -45,44 +45,14 @@ export const buildKeyMemberDict = (activeGroup) => {
   }, {});
 };
 
-const getBoxSize = (groupSize) => {
-  if (groupSize <= 5) return groupSize;
-  if (groupSize <= 7) return 3;
-  if (groupSize <= 8) return 4;
-  if (groupSize <= 10) return 5;
-  if (groupSize <= 12) return 4;
-  if (groupSize <= 15) return 1;
-  if (groupSize <= 16) return 4;
-  return 5;
-};
-
 export const buildActiveGroup = (groupId) => {
   const group = groupsJson[groupId];
-  const groupSize = group.members.length;
 
-  const members = group.members.reduce((acc, memberId, index) => {
-    const member = membersJson[memberId];
+  const newGroup = new Group(groupId, group.name, group.members);
 
-    const color = _.find(colorsJson, (o) => o.name === member.color);
+  newGroup.setMembers(membersJson, colorsJson);
 
-    acc[memberId] = {
-      ...member,
-      color,
-      id: memberId,
-      key: KEYS[index],
-      duration: 0,
-    };
-
-    return acc;
-  }, {});
-
-  return {
-    id: groupId,
-    ...group,
-    members,
-    groupSize,
-    boxSize: getBoxSize(groupSize),
-  };
+  return newGroup;
 };
 
 export const extractMemberIdFromBox = (boxId) => {

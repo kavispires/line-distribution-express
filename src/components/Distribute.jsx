@@ -14,13 +14,11 @@ function Distribute() {
   // Global States
   const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
   const [, setLog] = useGlobalState('log');
-  const [, setDistributionTotal] = useGlobalState('distributionTotal');
 
   const handleReset = useCallback(() => {
     setLog([]);
-    setDistributionTotal(0);
-    setActiveGroup((actvG) => buildActiveGroup(actvG.id));
-  }, [setLog, setDistributionTotal, setActiveGroup]);
+    setActiveGroup((previousActiveGroup) => buildActiveGroup(previousActiveGroup.id));
+  }, [setLog, setActiveGroup]);
 
   return (
     <main className="content distribute">

@@ -2,32 +2,27 @@ import React, { useCallback } from 'react';
 
 import useGlobalState from '../useGlobalState';
 import { SCREENS } from '../utils/constants';
-import { buildActiveGroup, buildKeyMemberDict } from '../utils';
+import { buildActiveGroup } from '../utils';
 
 function Presets() {
   // Global States
   const [, setScreen] = useGlobalState('screen');
   const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
-  const [, setKeyMemberDict] = useGlobalState('keyMemberDict');
   const [presets] = useGlobalState('presets');
   const [customPresets] = useGlobalState('customPresets');
   const [, setLog] = useGlobalState('log');
-  const [, setDistributionTotal] = useGlobalState('distributionTotal');
 
   const activatePreset = useCallback(
     (event) => {
       const { id } = event.target;
       if (id && id !== activeGroup?.id) {
-        const newActiveGroup = buildActiveGroup(event.target.id);
-        setKeyMemberDict(buildKeyMemberDict(newActiveGroup));
-        setActiveGroup(newActiveGroup);
+        setActiveGroup(buildActiveGroup(event.target.id));
         // Reset
         setLog([]);
-        setDistributionTotal(0);
       }
       setScreen(SCREENS.DISTRIBUTE);
     },
-    [activeGroup, setScreen, setKeyMemberDict, setActiveGroup, setLog, setDistributionTotal]
+    [activeGroup, setScreen, setActiveGroup, setLog]
   );
 
   return (

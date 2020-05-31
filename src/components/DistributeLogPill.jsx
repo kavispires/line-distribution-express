@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import _ from 'lodash';
 
 import useGlobalState from '../useGlobalState';
 import { getBackgroundColor } from '../utils';
@@ -19,22 +20,22 @@ function DistributeLogPill({ pill }) {
   const handleDuplicatePill = useCallback(
     (event) => {
       const duplicatedPill = new Pill(null, pill.duration, pill.category, pill.id);
-      setLog((pv) => [...pv, duplicatedPill]);
+      setLog((ps) => [...ps, duplicatedPill]);
     },
     [pill, setLog]
   );
 
-  const handleDeletePill = useCallback(
-    (event) => {
-      console.log('DELETE', pill.id);
-      console.log(log);
-    },
-    [log, pill.id]
-  );
+  const handleDeletePill = useCallback(() => {
+    // Remove duration from
+
+    setLog((ps) => _.remove([...ps], (n) => n.id !== pill.id));
+  }, [setLog, pill.id]);
 
   const member = activeGroup.members[pill.memberId];
 
   const copiedPillClassModifier = Boolean(pill.cloneFrom) ? 'pill--copy' : '';
+
+  console.log(activeGroup);
 
   return (
     <li
