@@ -4,6 +4,7 @@ import useGlobalState from '../useGlobalState';
 
 // Components
 import DistributeLogPill from './DistributeLogPill';
+import { updateMemberDuration } from '../utils';
 
 function DistributeLog() {
   // Global States
@@ -18,16 +19,7 @@ function DistributeLog() {
     const { duration = 0, memberId } = latestPill;
 
     if (memberId) {
-      setActiveGroup((activeG) => ({
-        ...activeG,
-        members: {
-          ...activeG.members,
-          [memberId]: {
-            ...activeG.members[memberId],
-            duration: activeG.members[memberId].duration + duration,
-          },
-        },
-      }));
+      setActiveGroup((activeG) => updateMemberDuration(activeG, memberId, duration));
 
       // Add to total
       setDistributionTotal((s) => s + duration);

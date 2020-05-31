@@ -98,3 +98,14 @@ export const generatePillId = (() => {
     return `p${lastNum}`;
   };
 })();
+
+export const updateMemberDuration = (group, memberId, value) => ({
+  ...group,
+  members: {
+    ...group.members,
+    [memberId]: {
+      ...group.members[memberId],
+      duration: group.members[memberId].duration + value,
+    },
+  },
+});
