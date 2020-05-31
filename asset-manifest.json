@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/line-distribution-express/static/css/main.5d77d6db.chunk.css",
+    "main.js": "/line-distribution-express/static/js/main.952d1273.chunk.js",
+    "main.js.map": "/line-distribution-express/static/js/main.952d1273.chunk.js.map",
+    "runtime-main.js": "/line-distribution-express/static/js/runtime-main.bdb170ee.js",
+    "runtime-main.js.map": "/line-distribution-express/static/js/runtime-main.bdb170ee.js.map",
+    "static/js/2.07322a2f.chunk.js": "/line-distribution-express/static/js/2.07322a2f.chunk.js",
+    "static/js/2.07322a2f.chunk.js.map": "/line-distribution-express/static/js/2.07322a2f.chunk.js.map",
+    "index.html": "/line-distribution-express/index.html",
+    "precache-manifest.43d0b128e44a85317a75e736d16fdcc9.js": "/line-distribution-express/precache-manifest.43d0b128e44a85317a75e736d16fdcc9.js",
+    "service-worker.js": "/line-distribution-express/service-worker.js",
+    "static/css/main.5d77d6db.chunk.css.map": "/line-distribution-express/static/css/main.5d77d6db.chunk.css.map",
+    "static/js/2.07322a2f.chunk.js.LICENSE.txt": "/line-distribution-express/static/js/2.07322a2f.chunk.js.LICENSE.txt",
+    "static/media/ld-express-logo-negative.svg": "/line-distribution-express/static/media/ld-express-logo-negative.41eb13f4.svg",
+    "static/media/ld-express-logo.svg": "/line-distribution-express/static/media/ld-express-logo.cee03cd6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bdb170ee.js",
+    "static/js/2.07322a2f.chunk.js",
+    "static/css/main.5d77d6db.chunk.css",
+    "static/js/main.952d1273.chunk.js"
+  ]
+}
