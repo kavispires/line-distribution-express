@@ -11,6 +11,8 @@ function Presets() {
   const [, setKeyMemberDict] = useGlobalState('keyMemberDict');
   const [presets] = useGlobalState('presets');
   const [customPresets] = useGlobalState('customPresets');
+  const [, setLog] = useGlobalState('log');
+  const [, setDistributionTotal] = useGlobalState('distributionTotal');
 
   const activatePreset = useCallback(
     (event) => {
@@ -19,11 +21,13 @@ function Presets() {
         const newActiveGroup = buildActiveGroup(event.target.id);
         setKeyMemberDict(buildKeyMemberDict(newActiveGroup));
         setActiveGroup(newActiveGroup);
-        // TO-DO: perform reset action
+        // Reset
+        setLog([]);
+        setDistributionTotal(0);
       }
       setScreen(SCREENS.DISTRIBUTE);
     },
-    [activeGroup, setScreen, setKeyMemberDict, setActiveGroup]
+    [activeGroup, setScreen, setKeyMemberDict, setActiveGroup, setLog, setDistributionTotal]
   );
 
   return (
