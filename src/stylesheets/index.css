@@ -209,7 +209,28 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid #282c34;
+  border: 1px solid #dddfe4;
   padding: 6px;
   border-radius: 3px;
+  list-style: none;
+}
+
+.pill {
+  padding: 3px;
+  border-radius: 12px;
+  margin: 0 3px 3px;
+}
+.pill__label {
+  font-size: 80%;
+  text-transform: uppercase;
+  margin: 3px;
+}
+.pill__timestamp {
+  font-size: 80%;
+  text-transform: lowercase;
+}
+.pill__icon-button {
+  background: white;
+  border: none;
+  border-radius: 50%;
 }

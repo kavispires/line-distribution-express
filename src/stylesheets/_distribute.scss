@@ -106,7 +106,31 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid $color-react;
+  border: 1px solid lighten($color: $color-react, $amount: 70%);
   padding: $unit2;
   border-radius: $unit;
+  list-style: none;
+}
+
+.pill {
+  padding: $unit;
+  border-radius: $unit3;
+  margin: 0 $unit $unit;
+
+  &__label {
+    font-size: 80%;
+    text-transform: uppercase;
+    margin: $unit;
+  }
+
+  &__timestamp {
+    font-size: 80%;
+    text-transform: lowercase;
+  }
+
+  &__icon-button {
+    background: white;
+    border: none;
+    border-radius: 50%;
+  }
 }

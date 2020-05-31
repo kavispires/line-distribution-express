@@ -12,12 +12,12 @@ function DistributeLogPill({ pill }) {
 
   return (
     <li className="pill" style={getBackgroundColor(member.color.hex, member.color.hsb[2])}>
-      <button className="pill_icon-button">D</button>
-      <button className="pill_icon-button">E</button>
+      <button className="pill__icon-button">D</button>
+      <button className="pill__icon-button">E</button>
       <span className="pill__label">
         {member.name} <span className="pill__timestamp">({pill.duration}ms)</span>
       </span>
-      <button className="pill_icon-button">T</button>
+      <button className="pill__icon-button">T</button>
     </li>
   );
 }

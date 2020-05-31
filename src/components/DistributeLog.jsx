@@ -28,7 +28,7 @@ function DistributeLog() {
 
   return (
     <ul className="log">
-      {log.map((pill) => (
+      {[...log].reverse().map((pill) => (
         <DistributeLogPill pill={pill} key={pill.id} />
       ))}
     </ul>
