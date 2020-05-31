@@ -2,12 +2,14 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import useGlobalState from '../useGlobalState';
 import { getBackgroundColor } from '../utils';
+import { Pill } from '../utils/classes';
 
 function DistributeBoxes() {
   // Global States
   const [activeGroup] = useGlobalState('activeGroup');
   const [activeBoxes, setActiveBoxes] = useGlobalState('activeBoxes');
   const [keyMemberDict] = useGlobalState('keyMemberDict');
+  const [, setLog] = useGlobalState('log');
   // Local States
   const [activeKeys, setActiveKeys] = useState({});
 
@@ -24,9 +26,7 @@ function DistributeBoxes() {
 
       const duration = Date.now() - previousTimeStamp;
 
-      console.log(duration);
-
-      // TO-DO: Create pill
+      setLog((pills) => [...pills, new Pill(memberId, duration)]);
 
       setActiveBoxes((s) => {
         const previousState = { ...s };
@@ -34,7 +34,7 @@ function DistributeBoxes() {
         return previousState;
       });
     },
-    [setActiveBoxes, activeBoxes]
+    [setActiveBoxes, activeBoxes, setLog]
   );
 
   // Add BoxClick functionality
@@ -105,7 +105,7 @@ function DistributeBoxes() {
           >
             <span className="box__key">{member.key}</span>
             <span className="box__name">{member.name}</span>
-            <span className="box__duration">{member.duration}s</span>
+            <span className="box__duration">{Number(member.duration / 1000).toFixed(1)}s</span>
           </li>
         );
       })}

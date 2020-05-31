@@ -56,8 +56,6 @@ const getBoxSize = (groupSize) => {
   return 5;
 };
 
-const getFakeDuration = () => Number((Math.random() * 12 * (1 + Math.random()) * 2).toFixed(2));
-
 export const buildActiveGroup = (groupId) => {
   const group = groupsJson[groupId];
   const groupSize = group.members.length;
@@ -72,7 +70,7 @@ export const buildActiveGroup = (groupId) => {
       color,
       id: memberId,
       key: KEYS[index],
-      duration: getFakeDuration(),
+      duration: 0,
     };
 
     return acc;

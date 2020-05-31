@@ -15,6 +15,8 @@ const initialState = {
   activeGroup: null,
   keyMemberDict: {},
   activeBoxes: {},
+  log: [],
+  distributionTotal: 0,
 };
 
 const { useGlobalState } = createGlobalState(initialState);

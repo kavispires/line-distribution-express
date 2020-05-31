@@ -6,11 +6,11 @@ import useGlobalState from '../useGlobalState';
 import DistributeCurrentAction from './DistributeCurrentAction';
 import DistributeProgressBar from './DistributeProgressBar';
 import DistributeBoxes from './DistributeBoxes';
+import DistributeLog from './DistributeLog';
 
 function Distribute() {
   // Global States
   const [activeGroup] = useGlobalState('activeGroup');
-  console.log(activeGroup);
 
   return (
     <main className="content distribute">
@@ -22,7 +22,7 @@ function Distribute() {
       <DistributeCurrentAction />
       <DistributeProgressBar />
       <DistributeBoxes />
-      <ul className="log">[log]</ul>
+      <DistributeLog />
     </main>
   );
 }

@@ -6,16 +6,13 @@ import { getBackgroundColor } from '../utils';
 function DistributeProgressBar() {
   // Global States
   const [activeGroup] = useGlobalState('activeGroup');
-
-  const total = Object.values(activeGroup.members).reduce((acc, member) => {
-    return acc + member.duration;
-  }, 0);
+  const [distributionTotal] = useGlobalState('distributionTotal');
 
   return (
     <ul className="progress-bar">
       {Object.values(activeGroup.members).map((member) => {
         const key = `bar-${member.id}`;
-        const percentage = (100 * member.duration) / total;
+        const percentage = member.duration > 0 ? (100 * member.duration) / distributionTotal : 0;
         return (
           <li
             key={key}
@@ -23,9 +20,10 @@ function DistributeProgressBar() {
             style={{
               ...getBackgroundColor(member.color.hex, member.color.hsb[2]),
               width: `${Math.round(percentage)}%`,
+              transition: 'width 0.5s',
             }}
           >
-            {percentage.toFixed(1)}%
+            {percentage > 5 ? `${percentage.toFixed(1)}%` : ''}
           </li>
         );
       })}
