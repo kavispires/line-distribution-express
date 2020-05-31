@@ -10,7 +10,7 @@ const buildSentence = (activeBoxes, membersObj) => {
 
   const members = activeBoxes
     .map((boxId) => {
-      const memberId = extractMemberIdFromBox(boxId);
+      const memberId = boxId.startsWith('box-') ? extractMemberIdFromBox(boxId) : boxId;
       return membersObj[memberId]?.name ?? 'Unknown';
     })
     .sort();
@@ -27,7 +27,6 @@ function DistributeCurrentAction() {
   const [activeGroup] = useGlobalState('activeGroup');
   const [activeBoxes] = useGlobalState('activeBoxes');
 
-  console.log(activeGroup.members);
   return (
     <h3 className="current-action">
       {buildSentence(Object.keys(activeBoxes), activeGroup.members)}

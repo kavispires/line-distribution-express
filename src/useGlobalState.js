@@ -13,6 +13,7 @@ const initialState = {
   presets: buildPresets(),
   customPresets: [],
   activeGroup: null,
+  keyMemberDict: {},
   activeBoxes: {},
 };
 

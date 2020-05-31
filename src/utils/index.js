@@ -38,6 +38,13 @@ export const buildPresets = () => {
   return _.sortBy(presetList, [(o) => o.name]);
 };
 
+export const buildKeyMemberDict = (activeGroup) => {
+  return Object.values(activeGroup.members).reduce((acc, member) => {
+    acc[member.key] = member.id;
+    return acc;
+  }, {});
+};
+
 const getBoxSize = (groupSize) => {
   if (groupSize <= 5) return groupSize;
   if (groupSize <= 7) return 3;
@@ -84,3 +91,12 @@ export const extractMemberIdFromBox = (boxId) => {
   const prefix = 'box-id-';
   return boxId.substring(prefix.length);
 };
+
+export const generatePillId = (() => {
+  let lastNum = 0;
+
+  return () => {
+    lastNum++;
+    return `p${lastNum}`;
+  };
+})();

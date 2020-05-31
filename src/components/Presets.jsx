@@ -2,12 +2,13 @@ import React, { useCallback } from 'react';
 
 import useGlobalState from '../useGlobalState';
 import { SCREENS } from '../utils/constants';
-import { buildActiveGroup } from '../utils';
+import { buildActiveGroup, buildKeyMemberDict } from '../utils';
 
 function Presets() {
   // Global States
   const [, setScreen] = useGlobalState('screen');
   const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
+  const [, setKeyMemberDict] = useGlobalState('keyMemberDict');
   const [presets] = useGlobalState('presets');
   const [customPresets] = useGlobalState('customPresets');
 
@@ -15,12 +16,14 @@ function Presets() {
     (event) => {
       const { id } = event.target;
       if (id && id !== activeGroup?.id) {
-        setActiveGroup(buildActiveGroup(event.target.id));
+        const newActiveGroup = buildActiveGroup(event.target.id);
+        setKeyMemberDict(buildKeyMemberDict(newActiveGroup));
+        setActiveGroup(newActiveGroup);
         // TO-DO: perform reset action
       }
       setScreen(SCREENS.DISTRIBUTE);
     },
-    [setActiveGroup, setScreen, activeGroup]
+    [activeGroup, setScreen, setKeyMemberDict, setActiveGroup]
   );
 
   return (
