@@ -69,11 +69,11 @@ body {
 }
 
 .preset-button {
-  padding: 6px;
-  width: 100%;
+  padding: 6px 12px;
   background: #fdfffc;
   border-radius: 3px;
   border: 1px outset #d8d8d8 #d1d1d1 #bababa;
+  width: 100%;
 }
 
 .color-palette {
@@ -96,4 +96,120 @@ body {
 }
 .color__name {
   font-size: 70%;
+}
+
+.current-action {
+  font-weight: bold;
+  text-align: center;
+}
+
+.distribute h1 {
+  text-align: center;
+}
+
+.distribute-nav {
+  text-align: center;
+}
+.distribute-nav__button {
+  padding: 6px 12px;
+  background: #fdfffc;
+  border-radius: 3px;
+  border: 1px outset #d8d8d8 #d1d1d1 #bababa;
+  padding: 6px 12px;
+  min-width: 150px;
+  border-radius: 0;
+}
+.distribute-nav__button:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.distribute-nav__button:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.progress-bar .bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70%;
+  transition: width ease-in-out;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-bar .bar:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.progress-bar .bar:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.boxes {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  padding: 12px 6px;
+  margin: 3px;
+  cursor: pointer;
+}
+.box--1 {
+  width: calc(100% / 1 - 24px);
+}
+.box--2 {
+  width: calc(100% / 2 - 24px);
+}
+.box--3 {
+  width: calc(100% / 3 - 24px);
+}
+.box--4 {
+  width: calc(100% / 4 - 24px);
+}
+.box--5 {
+  width: calc(100% / 5 - 24px);
+}
+.box__key {
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  padding: 3px 6px;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.box__name {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 12px 0;
+}
+.box__duration {
+  font-size: 80%;
+}
+
+.log {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #282c34;
+  padding: 6px;
+  border-radius: 3px;
 }

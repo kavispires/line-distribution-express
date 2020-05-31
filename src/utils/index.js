@@ -1,5 +1,13 @@
 import _ from 'lodash';
 
+// Database files
+import colorsJson from '../database/colors.json';
+import groupsJson from '../database/groups.json';
+import membersJson from '../database/members.json';
+
+// Constants
+import { KEYS } from './constants';
+
 export const getBackgroundColor = (hex = '#585818', luminance = 100) => {
   return {
     backgroundColor: hex,
@@ -13,10 +21,10 @@ export const getForegroundColor = (hex = '#585818') => {
   };
 };
 
-export const buildPresets = (groupsObj, membersObj) => {
-  const presetList = Object.entries(groupsObj).map(([groupId, groupData]) => {
+export const buildPresets = () => {
+  const presetList = Object.entries(groupsJson).map(([groupId, groupData]) => {
     const members = groupData.members.map((memberId) => {
-      return { ...membersObj[memberId] };
+      return { ...membersJson[memberId] };
     });
 
     return {
@@ -28,4 +36,46 @@ export const buildPresets = (groupsObj, membersObj) => {
   });
 
   return _.sortBy(presetList, [(o) => o.name]);
+};
+
+const getBoxSize = (groupSize) => {
+  if (groupSize <= 5) return groupSize;
+  if (groupSize <= 7) return 3;
+  if (groupSize <= 8) return 4;
+  if (groupSize <= 10) return 5;
+  if (groupSize <= 12) return 4;
+  if (groupSize <= 15) return 1;
+  if (groupSize <= 16) return 4;
+  return 5;
+};
+
+const getFakeDuration = () => Number((Math.random() * 12 * (1 + Math.random()) * 2).toFixed(2));
+
+export const buildActiveGroup = (groupId) => {
+  const group = groupsJson[groupId];
+  const groupSize = group.members.length;
+
+  const members = group.members.reduce((acc, memberId, index) => {
+    const member = membersJson[memberId];
+
+    const color = _.find(colorsJson, (o) => o.name === member.color);
+
+    acc[memberId] = {
+      ...member,
+      color,
+      id: memberId,
+      key: KEYS[index],
+      duration: getFakeDuration(),
+    };
+
+    return acc;
+  }, {});
+
+  return {
+    id: groupId,
+    ...group,
+    members,
+    groupSize,
+    boxSize: getBoxSize(groupSize),
+  };
 };

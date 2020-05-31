@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import useGlobalState from '../useGlobalState';
 import { SCREENS } from '../utils/constants';
+import { buildActiveGroup } from '../utils';
 
 function Presets() {
   // Global States
   const [, setScreen] = useGlobalState('screen');
-  const [, setActiveGroup] = useGlobalState('activeGroup');
+  const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
   const [presets] = useGlobalState('presets');
   const [customPresets] = useGlobalState('customPresets');
 
-  const activatePreset = (preset) => {
-    setActiveGroup(preset);
-    setScreen(SCREENS.DISTRIBUTE);
-  };
+  const activatePreset = useCallback(
+    (event) => {
+      const { id } = event.target;
+      if (id && id !== activeGroup?.id) {
+        setActiveGroup(buildActiveGroup(event.target.id));
+        // TO-DO: perform reset action
+      }
+      setScreen(SCREENS.DISTRIBUTE);
+    },
+    [setActiveGroup, setScreen, activeGroup]
+  );
 
   return (
     <main className="content preset">
@@ -23,7 +31,7 @@ function Presets() {
         {presets.map((preset) => {
           return (
             <li key={preset.id} className="preset-item">
-              <button className="preset-button" onClick={() => activatePreset(preset)}>
+              <button className="preset-button" id={preset.id} onClick={activatePreset}>
                 {preset.name} ({preset.groupSize} members)
               </button>
             </li>

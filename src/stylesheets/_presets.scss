@@ -11,9 +11,6 @@
 }
 
 .preset-button {
-  padding: $unit2;
+  @include btn;
   width: 100%;
-  background: $color-negative;
-  border-radius: $unit;
-  border: 1px outset rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
 }

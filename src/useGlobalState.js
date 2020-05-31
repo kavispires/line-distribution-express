@@ -3,8 +3,6 @@ import _ from 'lodash';
 
 // Database files
 import colorsJson from './database/colors.json';
-import groupsJson from './database/groups.json';
-import membersJson from './database/members.json';
 
 import { buildPresets } from './utils';
 import { SCREENS } from './utils/constants';
@@ -12,7 +10,7 @@ import { SCREENS } from './utils/constants';
 const initialState = {
   screen: SCREENS.HOME,
   palette: _.sortBy(colorsJson, [(o) => o.hsb[0], (o) => o.hsb[1]]),
-  presets: buildPresets(groupsJson, membersJson),
+  presets: buildPresets(),
   customPresets: [],
   activeGroup: null,
 };

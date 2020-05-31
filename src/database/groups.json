@@ -3,11 +3,11 @@
     "name": "Squirrel Zone",
     "members": [
       "m001",
+      "m006",
       "m002",
       "m003",
       "m004",
       "m005",
-      "m006",
       "m007",
       "m008",
       "m009",
@@ -21,7 +21,7 @@
   },
   "a003": {
     "name": "Squirrel Zone 1.5",
-    "members": ["m001", "m002", "m003", "m004", "m005", "m006"]
+    "members": ["m001", "m006", "m003", "m004", "m005"]
   },
   "a004": {
     "name": "Squirrel Zone II",

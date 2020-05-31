@@ -5,3 +5,10 @@ $unit2: $unit * pow(2, 1);
 $unit3: $unit * pow(2, 2);
 $unit4: $unit * pow(2, 3);
 $unit5: $unit * pow(2, 4);
+
+@mixin btn {
+  padding: $unit2 $unit3;
+  background: $color-negative;
+  border-radius: $unit;
+  border: 1px outset rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+}
