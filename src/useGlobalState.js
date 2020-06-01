@@ -14,6 +14,7 @@ const initialState = {
   customPresets: [],
   activeGroup: null,
   activeBoxes: {},
+  activePill: null,
   log: [],
 };
 

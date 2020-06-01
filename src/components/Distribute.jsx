@@ -8,12 +8,14 @@ import DistributeCurrentAction from './DistributeCurrentAction';
 import DistributeProgressBar from './DistributeProgressBar';
 import DistributeBoxes from './DistributeBoxes';
 import DistributeLog from './DistributeLog';
+import DistributeEditPill from './DistributeEditPill';
 import Icon from './Icon';
 
 function Distribute() {
   // Global States
   const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
   const [, setLog] = useGlobalState('log');
+  const [activePill] = useGlobalState('activePill');
 
   const handleReset = useCallback(() => {
     setLog([]);
@@ -35,6 +37,7 @@ function Distribute() {
       <DistributeProgressBar />
       <DistributeBoxes />
       <DistributeLog />
+      {Boolean(activePill) && <DistributeEditPill />}
     </main>
   );
 }

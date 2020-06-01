@@ -6,7 +6,7 @@ import { getBackgroundColor } from '../utils';
 function CreateColorPalette() {
   // Global States
   const [palette] = useGlobalState('palette');
-  console.log(palette);
+
   return (
     <main className="content create">
       <h3>Color Palette</h3>

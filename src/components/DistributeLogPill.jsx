@@ -11,15 +11,16 @@ import Icon from './Icon';
 function DistributeLogPill({ pill }) {
   // Global States
   const [activeGroup, setActiveGroup] = useGlobalState('activeGroup');
-  const [log, setLog] = useGlobalState('log');
+  const [, setLog] = useGlobalState('log');
+  const [, setActivePill] = useGlobalState('activePill');
 
   const handleEditPill = useCallback(() => {
-    console.log('EDIT', pill.id);
-  }, [pill.id]);
+    setActivePill(pill);
+  }, [pill, setActivePill]);
 
   const handleDuplicatePill = useCallback(
     (event) => {
-      const duplicatedPill = new Pill(null, pill.duration, pill.category, pill.id);
+      const duplicatedPill = new Pill('', pill.duration, pill.category, pill.id);
       setLog((ps) => [...ps, duplicatedPill]);
     },
     [pill, setLog]
@@ -38,23 +39,35 @@ function DistributeLogPill({ pill }) {
 
   const copiedPillClassModifier = Boolean(pill.cloneFrom) ? 'pill--copy' : '';
 
-  console.log(activeGroup);
-
   return (
     <li
       className={`pill ${copiedPillClassModifier}`}
       style={getBackgroundColor(member?.color?.hex, member?.color?.hsb[2])}
     >
-      <button className="pill__icon-button" onClick={handleEditPill}>
+      <span className="pill__icon pill__icon--category">
+        <Icon type="default" />
+      </span>
+
+      {member?.name ? (
+        <span className="pill__label">
+          {member?.name ?? '[Assign]'} <span className="pill__timestamp">({pill.duration}ms)</span>
+        </span>
+      ) : (
+        <span className="pill__label">
+          <button className="pill__assign-button" onClick={handleEditPill}>
+            [Assign]
+          </button>
+          <span className="pill__timestamp">({pill.duration}ms)</span>
+        </span>
+      )}
+
+      <button className="pill__icon pill__icon--button" onClick={handleEditPill}>
         <Icon type="pencil" iconButton />
       </button>
-      <button className="pill__icon-button" onClick={handleDuplicatePill}>
+      <button className="pill__icon pill__icon--button" onClick={handleDuplicatePill}>
         <Icon type="duplicate" iconButton />
       </button>
-      <span className="pill__label">
-        {member?.name ?? '[Assign]'} <span className="pill__timestamp">({pill.duration}ms)</span>
-      </span>
-      <button className="pill__icon-button" onClick={handleDeletePill}>
+      <button className="pill__icon pill__icon--button" onClick={handleDeletePill}>
         <Icon type="trash" iconButton />
       </button>
     </li>

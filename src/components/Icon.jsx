@@ -33,7 +33,7 @@ const ICONS = {
     'M311,393V192c0-3,1-5,2-7c2-1,4-2,7-2h18c3,0,5,1,7,2c2,2,2,4,2,7v201c0,3,0,5-2,7c-2,1-4,2-7,2h-18 c-3,0-5-1-7-2C312,398,311,396,311,393z M238,393V192c0-3,1-5,2-7c2-1,4-2,7-2h18c3,0,5,1,7,2c1,2,2,4,2,7v201c0,3-1,5-2,7 c-2,1-4,2-7,2h-18c-3,0-5-1-7-2C239,398,238,396,238,393z M165,393V192c0-3,0-5,2-7c2-1,4-2,7-2h18c3,0,5,1,7,2c1,2,2,4,2,7v201 c0,3-1,5-2,7c-2,1-4,2-7,2h-18c-3,0-5-1-7-2C165,398,165,396,165,393z M320,110H192l14-34c1-1,3-2,5-3h90c2,1,4,2,5,3L320,110z  M55,119v18c0,3,1,5,2,7c2,1,4,2,7,2h27v271c0,16,5,30,14,41c9,12,20,17,32,17h238c12,0,23-5,32-16s14-25,14-41V146h27c3,0,5-1,7-2 c1-2,2-4,2-7v-18c0-3-1-5-2-7c-2-1-4-2-7-2h-88l-20-48c-3-7-8-13-16-18c-7-5-15-7-22-7h-92c-7,0-15,2-22,7c-8,5-13,11-16,18l-20,48 H64c-3,0-5,1-7,2C56,114,55,116,55,119z',
 };
 
-function Icon({ type, inline = false, inverted = false, iconButton = false }) {
+function Icon({ type, size = '12', inline = false, inverted = false, iconButton = false }) {
   const margin = inline ? '0 3px' : 0;
   const fillColor = inverted ? '#fdfffc' : '#282c34';
   const transform = iconButton ? 'translate(-5px, -2px)' : 'translateY(-2px)';
@@ -49,8 +49,6 @@ function Icon({ type, inline = false, inverted = false, iconButton = false }) {
       fill: fillColor,
     },
   };
-
-  const size = '12';
 
   return (
     <svg

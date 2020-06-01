@@ -112,6 +112,8 @@
   list-style: none;
 }
 
+$pill-icon-size: 16px;
+
 .pill {
   padding: $unit;
   border-radius: $unit4;
@@ -128,17 +130,118 @@
     text-transform: lowercase;
   }
 
-  &__icon-button {
-    width: 16px;
-    height: 16px;
+  &__icon {
+    width: $pill-icon-size;
+    height: $pill-icon-size;
     background: white;
     border: none;
     border-radius: $unit4;
     margin: 0 $unit;
-    cursor: pointer;
+    text-align: center;
 
-    &:hover {
-      transform: scale(1.3);
+    &--button {
+      cursor: pointer;
+      background: white;
+
+      &:hover {
+        transform: scale(1.3);
+      }
     }
+
+    &--category {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-widget {
+  background: $color-negative;
+  min-width: 300px;
+  padding: $unit4;
+  text-align: center;
+
+  h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &__buttons {
+    margin-top: $unit4;
+  }
+
+  &__button {
+    @include btn;
+    width: 50%;
+    max-width: 120px;
+  }
+
+  label {
+    display: block;
+    text-align: left;
+    font-size: 80%;
+    margin: $unit3 0 $unit2 0;
+  }
+
+  select,
+  input {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+$demo-category-icon-size: 37px;
+
+.pill-demo {
+  display: flex;
+  margin: $unit4 auto;
+  width: 100%;
+  max-width: 200px;
+  border-radius: $unit4;
+  padding: $unit2;
+
+  &__category-icon {
+    width: $demo-category-icon-size;
+    height: $demo-category-icon-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-negative;
+    border-radius: 50%;
+
+    & > svg {
+      transform: none !important;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX($demo-category-icon-size * -0.5);
+  }
+
+  &__name {
+    font-weight: bold;
+  }
+
+  &__timestamp {
+    font-size: 80%;
   }
 }

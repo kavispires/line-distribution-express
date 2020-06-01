@@ -1,8 +1,18 @@
 export const SCREENS = {
-  HOME: Symbol('SCREEN'),
+  HOME: Symbol('HOME'),
   PRESETS: Symbol('PRESETS'),
   CREATE: Symbol('CREATE'),
   DISTRIBUTE: Symbol('DISTRIBUTE'),
+};
+
+export const CATEGORIES = {
+  AD_LIBS: 'AD_LIBS',
+  CHORUS: 'CHORUS',
+  HOOK: 'HOOK',
+  LINE: 'LINE',
+  PRE_CHORUS: 'PRE_CHORUS',
+  RAP: 'RAP',
+  VERSE: 'VERSE',
 };
 
 export const KEYS = [

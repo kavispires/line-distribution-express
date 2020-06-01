@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
 // Constants
-import { KEYS } from './constants';
+import { KEYS, CATEGORIES } from './constants';
 import { generatePillId } from './index';
 
 export class Pill {
-  constructor(memberId, duration, category = 'LINE', clonedFrom = null) {
+  constructor(memberId, duration, category = CATEGORIES.LINE, clonedFrom = null) {
     this.id = generatePillId();
     this.memberId = memberId;
     this.duration = duration;
@@ -76,8 +76,6 @@ export class Group {
       const color = _.find(colorsDB, (o) => o.name === member.color);
 
       acc[memberId] = new Member(memberId, member.name, KEYS[index], color);
-
-      console.log(acc[memberId]);
 
       return acc;
     }, {});
