@@ -15,6 +15,16 @@ export const CATEGORIES = {
   VERSE: 'VERSE',
 };
 
+export const CATEGORIES_ICONS = {
+  AD_LIBS: 'line-ad-libs',
+  CHORUS: 'line-chorus',
+  HOOK: 'line-hook',
+  LINE: 'line',
+  PRE_CHORUS: 'line-pre-chorus',
+  RAP: 'line-rap',
+  VERSE: 'line-verse',
+};
+
 export const KEYS = [
   '1',
   '2',

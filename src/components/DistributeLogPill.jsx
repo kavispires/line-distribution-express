@@ -4,6 +4,7 @@ import _ from 'lodash';
 import useGlobalState from '../useGlobalState';
 import { getBackgroundColor } from '../utils';
 import { Pill } from '../utils/classes';
+import { CATEGORIES_ICONS } from '../utils/constants';
 
 // Components
 import Icon from './Icon';
@@ -44,8 +45,8 @@ function DistributeLogPill({ pill }) {
       className={`pill ${copiedPillClassModifier}`}
       style={getBackgroundColor(member?.color?.hex, member?.color?.hsb[2])}
     >
-      <span className="pill__icon pill__icon--category">
-        <Icon type="default" />
+      <span className="pill__icon pill__icon--category" title={pill.category}>
+        <Icon type={CATEGORIES_ICONS[pill.category]} />
       </span>
 
       {member?.name ? (
@@ -61,13 +62,21 @@ function DistributeLogPill({ pill }) {
         </span>
       )}
 
-      <button className="pill__icon pill__icon--button" onClick={handleEditPill}>
+      <button className="pill__icon pill__icon--button" onClick={handleEditPill} title="Edit Pill">
         <Icon type="pencil" iconButton />
       </button>
-      <button className="pill__icon pill__icon--button" onClick={handleDuplicatePill}>
+      <button
+        className="pill__icon pill__icon--button"
+        onClick={handleDuplicatePill}
+        title="Duplicate Pill"
+      >
         <Icon type="duplicate" iconButton />
       </button>
-      <button className="pill__icon pill__icon--button" onClick={handleDeletePill}>
+      <button
+        className="pill__icon pill__icon--button"
+        onClick={handleDeletePill}
+        title="Delete Pill"
+      >
         <Icon type="trash" iconButton />
       </button>
     </li>

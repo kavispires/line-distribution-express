@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import useGlobalState from '../useGlobalState';
 import { getBackgroundColor } from '../utils';
-import { CATEGORIES } from '../utils/constants';
+import { CATEGORIES, CATEGORIES_ICONS } from '../utils/constants';
 
 // Components
 import Icon from './Icon';
@@ -81,7 +81,7 @@ function DistributeEditPill() {
           style={getBackgroundColor(member?.color?.hex, member?.color?.hsb[2])}
         >
           <span className="pill-demo__category-icon">
-            <Icon type="default" size="30" />
+            <Icon type={CATEGORIES_ICONS[activePill.category]} size="30" />
           </span>
           <span className="pill-demo__info">
             <span className="pill-demo__name"> {member?.name ?? '?'} </span>
