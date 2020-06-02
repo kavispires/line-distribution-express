@@ -26,5 +26,9 @@
   "a004": {
     "name": "Squirrel Zone II",
     "members": ["m007", "m008", "m009", "m010", "m011"]
+  },
+  "a005": {
+    "name": "Banda Vyrus",
+    "members": ["m012", "m013", "m014", "m015", "m016", "m017"]
   }
 }

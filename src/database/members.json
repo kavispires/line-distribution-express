@@ -42,5 +42,29 @@
   "m011": {
     "name": "Nathan",
     "color": "spring-green"
+  },
+  "m012": {
+    "name": "Mari",
+    "color": "slate-blue"
+  },
+  "m013": {
+    "name": "Mab",
+    "color": "brillian-rose"
+  },
+  "m014": {
+    "name": "CD",
+    "color": "star-command-blue"
+  },
+  "m015": {
+    "name": "Pri",
+    "color": "saffron"
+  },
+  "m016": {
+    "name": "Mika",
+    "color": "spring-frost"
+  },
+  "m017": {
+    "name": "Deby",
+    "color": "imperial-red"
   }
 }
