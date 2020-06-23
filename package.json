@@ -1,8 +1,7 @@
 {
   "name": "line-distribution-express",
-  "version": "0.1.0",
+  "version": "0.9.0",
   "homepage": "http://www.kavispires.com/line-distribution-express/",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
