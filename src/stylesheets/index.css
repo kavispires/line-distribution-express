@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #fdfffc;
   color: #282c34;
@@ -66,13 +70,15 @@ body {
   width: 24%;
   min-width: 200px;
   max-width: 250px;
+  display: flex;
+  margin: 0 3px;
 }
 
 .preset-button {
   padding: 6px 12px;
   background: #fdfffc;
   border-radius: 3px;
-  border: 1px outset #d8d8d8 #d1d1d1 #bababa;
+  border: 1px outset #bababa;
   width: 100%;
 }
 
@@ -114,7 +120,7 @@ body {
   padding: 6px 12px;
   background: #fdfffc;
   border-radius: 3px;
-  border: 1px outset #d8d8d8 #d1d1d1 #bababa;
+  border: 1px outset #bababa;
   padding: 6px 12px;
   min-width: 150px;
   border-radius: 0;
@@ -281,7 +287,7 @@ body {
   padding: 6px 12px;
   background: #fdfffc;
   border-radius: 3px;
-  border: 1px outset #d8d8d8 #d1d1d1 #bababa;
+  border: 1px outset #bababa;
   width: 50%;
   max-width: 120px;
 }
