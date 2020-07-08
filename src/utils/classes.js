@@ -55,6 +55,13 @@ export class Group {
     return this._total;
   }
 
+  get max() {
+    return Object.values(this.members).reduce((acc, member) => {
+      if (acc < member.duration) return member.duration;
+      return acc;
+    }, 0);
+  }
+
   get groupSize() {
     return Object.keys(this.members).length || this.memberdIds.length || 5;
   }
@@ -96,6 +103,16 @@ export class Group {
     const member = this.members[memberId];
     const percentage = member.duration > 0 ? (100 * member.duration) / this.total : 0;
     return Number(percentage.toFixed(1));
+  }
+
+  getMemberRelativePercentage(memberId) {
+    const member = this.members[memberId];
+    const percentage = member.duration > 0 ? (100 * member.duration) / this.max : 0;
+    return Math.round(percentage);
+  }
+
+  getMembersRanked() {
+    return Object.values(this.members).sort((a, b) => b.duration - a.duration);
   }
 
   addMemberDuration(memberId, duration) {
