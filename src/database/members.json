@@ -66,5 +66,41 @@
   "m017": {
     "name": "Deby",
     "color": "imperial-red"
+  },
+  "m018": {
+    "name": "Main Vocalist",
+    "color": "carrot-orange"
+  },
+  "m019": {
+    "name": "Lead Vocalist",
+    "color": "minion-yellow"
+  },
+  "m020": {
+    "name": "Center",
+    "color": "brillian-rose"
+  },
+  "m021": {
+    "name": "Vocalist",
+    "color": "slate-blue"
+  },
+  "m022": {
+    "name": "Sub Vocalist",
+    "color": "lavender-floral"
+  },
+  "m023": {
+    "name": "Main Dancer",
+    "color": "maximum-green"
+  },
+  "m024": {
+    "name": "Dancer",
+    "color": "spring-green"
+  },
+  "m025": {
+    "name": "Main Rapper",
+    "color": "star-command-blue"
+  },
+  "m026": {
+    "name": "Rapper",
+    "color": "blue-jeans"
   }
 }
