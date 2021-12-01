@@ -13,7 +13,13 @@ function DistributeEditPill() {
   const [, setLog] = useGlobalState('log');
   const [activePill, setActivePill] = useGlobalState('activePill');
   // LocalState
-  const [originalPillValues] = useState([activePill.memberId, activePill.duration]);
+  const [originalPillValues] = useState({
+    memberId: activePill.memberId,
+    duration: activePill.duration,
+  });
+
+  console.log(originalPillValues.memberId);
+  console.log({ activeGroup });
 
   const handleCancel = useCallback(() => {
     setActivePill(null);
@@ -31,8 +37,12 @@ function DistributeEditPill() {
     });
 
     setActiveGroup((previousState) => {
-      if (originalPillValues[0]) {
-        previousState.subtractMemberDuration(originalPillValues[0], originalPillValues[1]);
+      if (originalPillValues.memberId) {
+        console.log('it should subtract');
+        previousState.subtractMemberDuration(
+          originalPillValues.memberId,
+          originalPillValues.duration
+        );
       }
       return previousState.addMemberDuration(activePill.memberId, activePill.duration);
     });

@@ -27,9 +27,9 @@ function Presets() {
 
   return (
     <main className="content preset">
-      <h2>Presets</h2>
+      <h2 data-testid="presets-title">Presets</h2>
       <p>Select the group preset you want to use:</p>
-      <ul className="presets-list">
+      <ul data-testid="presets-list" className="presets-list">
         {presets.map((preset) => {
           return (
             <li key={preset.id} className="preset-item">
@@ -43,7 +43,7 @@ function Presets() {
       <h3>Custom Presets</h3>
 
       {customPresets.length > 0 ? (
-        <ul className="presets-list">
+        <ul className="presets-list" data-testid="presets-list-custom">
           {presets.map((preset) => {
             return (
               <li key={preset.id} className="ha">

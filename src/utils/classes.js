@@ -123,9 +123,19 @@ export class Group {
   }
 
   subtractMemberDuration(memberId, duration) {
+    console.log('==BEFORE==');
+    console.log(this.members[memberId].duration);
+    console.log('total', this._total);
+    console.log(JSON.parse(JSON.stringify(this)));
+
     this._total -= duration;
 
     this.members[memberId].subtractDuration(duration);
+
+    console.log('==AFTER==');
+    console.log(this.members[memberId].duration);
+    console.log('total', this._total);
+    console.log(JSON.parse(JSON.stringify(this)));
     return this;
   }
 
