@@ -32,7 +32,11 @@
     "members": ["m012", "m013", "m014", "m015", "m016", "m017"]
   },
   "a006": {
-    "name": "TSFTNS",
+    "name": "The Search for the Next Squirrel",
     "members": ["m018", "m019", "m020", "m021", "m022", "m023", "m024", "m025", "m026"]
+  },
+  "a007": {
+    "name": "SYK",
+    "members": ["m027", "m028", "m029"]
   }
 }

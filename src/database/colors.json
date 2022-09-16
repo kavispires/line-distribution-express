@@ -42,46 +42,46 @@
     "group": "purples"
   },
   "168": {
-    "name": "caribean-green",
+    "name": "caribbean-green",
     "hsb": [168, 99, 91],
     "hex": "#03CEA4",
-    "group": "green"
+    "group": "greens"
   },
   "47": {
     "name": "saffron",
     "hsb": [47, 77, 92],
     "hex": "#EAC435",
-    "group": "yellow"
+    "group": "yellows"
   },
   "206": {
     "name": "blue-jeans",
     "hsb": [206, 79, 100],
     "hex": "#35A7FF",
-    "group": "blue"
+    "group": "blues"
   },
   "211": {
     "name": "lapis-lazuli",
     "hsb": [211, 60, 55],
     "hex": "#38618C",
-    "group": "blue"
+    "group": "blues"
   },
   "89": {
     "name": "spring-green",
     "hsb": [142, 67, 96],
     "hex": "#51F58D",
-    "group": "white"
+    "group": "whites"
   },
   "11": {
     "name": "orange-soda",
     "hsb": [11, 75, 96],
     "hex": "#F4603E",
-    "group": "white"
+    "group": "whites"
   },
   "257": {
     "name": "lavender-floral",
     "hsb": [257, 40, 89],
     "hex": "#A288E3",
-    "group": "purple"
+    "group": "purples"
   },
   "0": {
     "name": "carnelian",
@@ -90,57 +90,57 @@
     "group": "red"
   },
   "333": {
-    "name": "brillian-rose",
+    "name": "brilliant-rose",
     "hsb": [333, 64, 100],
     "hex": "#FF5CA5",
-    "group": "purple"
+    "group": "purples"
   },
   "201": {
     "name": "star-command-blue",
     "hsb": [201, 100, 75],
     "hex": "#007CBE",
-    "group": "blue"
+    "group": "blues"
   },
   "54": {
     "name": "minion-yellow",
     "hsb": [54, 82, 95],
     "hex": "#F3DE2C",
-    "group": "yellow"
+    "group": "yellows"
   },
   "82": {
     "name": "apple-green",
     "hsb": [82, 87, 71],
     "hex": "#7CB518",
-    "group": "white"
+    "group": "whites"
   },
   "251": {
     "name": "slate-blue",
     "hsb": [251, 58, 87],
     "hex": "#735CDD",
-    "group": "white"
+    "group": "whites"
   },
   "288": {
     "name": "dark-orchid",
     "hsb": [288, 79, 80],
     "hex": "#AB2ACC",
-    "group": "white"
+    "group": "whites"
   },
   "301": {
     "name": "patriarch",
     "hsb": [301, 100, 49],
     "hex": "#7E007B",
-    "group": "white"
+    "group": "whites"
   },
   "102": {
     "name": "spring-frost",
     "hsb": [102, 72, 100],
     "hex": "#7EFF47",
-    "group": "white"
+    "group": "whites"
   },
   "1": {
     "name": "newcolor",
     "hsb": [],
     "hex": "#cccccc",
-    "group": "white"
+    "group": "whites"
   }
 }
